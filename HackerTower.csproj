@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net48</TargetFramework>
+        <RootNamespace>HackerTower</RootNamespace>
+        <Configurations>Debug;Release</Configurations>
+        <Nullable>enable</Nullable>
+        <AssemblyName>HackerTower</AssemblyName>
+        <LangVersion>latest</LangVersion>
+    </PropertyGroup>
+    
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+        <Optimize>False</Optimize>
+        <DebugType>embedded</DebugType>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+        <Optimize>True</Optimize>
+        <DebugType>none</DebugType>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <None Remove="Assets\BetterMouse-Icon.png" />
+      <None Remove="Assets\BoostedWeaponary-Icon.png" />
+      <None Remove="Assets\CorrosivePaste-Icon.png" />
+      <None Remove="Assets\Disintegrater-Icon.png" />
+      <None Remove="Assets\FasterKeyboard-Icon.png" />
+      <None Remove="Assets\Firewall-Icon.png" />
+      <None Remove="Assets\GlitchedRiches-Icon.png" />
+      <None Remove="Assets\GlitchPaste-Icon.png" />
+      <None Remove="Assets\GoldenBananas-Icon.png" />
+      <None Remove="Assets\HackedCash-Icon.png" />
+      <None Remove="Assets\Hacker-Icon.png" />
+      <None Remove="Assets\Hacker-Portrait.png" />
+      <None Remove="Assets\Hacker000Display.png" />
+      <None Remove="Assets\Hacker050Display.png" />
+      <None Remove="Assets\Hacker500Display.png" />
+      <None Remove="Assets\HackerBlast-Icon.png" />
+      <None Remove="Assets\HackerBullet.png" />
+      <None Remove="Assets\HackShotgun-Icon.png" />
+      <None Remove="Assets\Icon.png" />
+      <None Remove="Assets\PenetratingHacks-Icon.png" />
+      <None Remove="Assets\RegrowFirewall-Icon.png" />
+      <None Remove="Assets\WhiteHatHacker-Icon.png" />
+    </ItemGroup>
+
+    <Import Project="..\btd6.targets" />
+
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+      <Exec Command="copy &quot;$(TargetDir)$(TargetFileName)&quot; &quot;C:\Program Files (x86)\Steam\steamapps\common\BloonsTD6\Mods&quot; /y" />
+    </Target>
+</Project>

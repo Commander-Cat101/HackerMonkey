@@ -3,35 +3,36 @@ using BTD_Mod_Helper;
 using HackerTower;
 using BTD_Mod_Helper.Api.Enums;
 using BTD_Mod_Helper.Api.Towers;
-using Assets.Scripts.Models.Towers;
-using Assets.Scripts.Models.TowerSets;
+using Il2CppAssets.Scripts.Models.Towers;
+using Il2CppAssets.Scripts.Models.TowerSets;
 using System.Collections.Generic;
 using System.Linq;
 using BTD_Mod_Helper.Extensions;
-using Assets.Scripts.Unity;
-using Assets.Scripts.Models.Towers.Projectiles.Behaviors;
-using Assets.Scripts.Utils;
-using Assets.Scripts.Models.Towers.Behaviors.Attack;
-using Assets.Scripts.Models.Towers.Behaviors.Abilities;
-using Assets.Scripts.Models.Towers.Mods;
-using Assets.Scripts.Simulation.Towers.Behaviors.Abilities.Behaviors;
-using Assets.Scripts.Models.Towers.Behaviors.Abilities.Behaviors;
-using Assets.Scripts.Models.GenericBehaviors;
-using Assets.Scripts.Models.Bloons.Behaviors;
-using Assets.Scripts.Unity.Bloons.Behaviors;
-using Assets.Scripts.Models.Towers.Behaviors;
-using Assets.Scripts.Simulation.Towers.Projectiles.Behaviors;
-using Assets.Scripts.Simulation;
+using Il2CppAssets.Scripts.Unity;
+using Il2CppAssets.Scripts.Models.Towers.Projectiles.Behaviors;
+using Il2CppAssets.Scripts.Utils;
+using Il2CppAssets.Scripts.Models.Towers.Behaviors.Attack;
+using Il2CppAssets.Scripts.Models.Towers.Behaviors.Abilities;
+using Il2CppAssets.Scripts.Models.Towers.Mods;
+using Il2CppAssets.Scripts.Simulation.Towers.Behaviors.Abilities.Behaviors;
+using Il2CppAssets.Scripts.Models.Towers.Behaviors.Abilities.Behaviors;
+using Il2CppAssets.Scripts.Models.GenericBehaviors;
+using Il2CppAssets.Scripts.Models.Bloons.Behaviors;
+using Il2CppAssets.Scripts.Unity.Bloons.Behaviors;
+using Il2CppAssets.Scripts.Models.Towers.Behaviors;
+using Il2CppAssets.Scripts.Simulation.Towers.Projectiles.Behaviors;
+using Il2CppAssets.Scripts.Simulation;
 using HarmonyLib;
 using Il2CppSystem;
-using Assets.Scripts.Unity.Display;
+using Il2CppAssets.Scripts.Unity.Display;
 using BTD_Mod_Helper.Api.Display;
-using Assets.Scripts.Simulation.Bloons.Behaviors;
-using Assets.Scripts.Unity.Towers.Projectiles.Behaviors;
+using Il2CppAssets.Scripts.Simulation.Bloons.Behaviors;
+using Il2CppAssets.Scripts.Unity.Towers.Projectiles.Behaviors;
 using BTD_Mod_Helper.Api;
-using Assets.Scripts.Unity.Towers.Behaviors;
-using Assets.Scripts.Models.Towers.Behaviors.Emissions;
+using Il2CppAssets.Scripts.Unity.Towers.Behaviors;
+using Il2CppAssets.Scripts.Models.Towers.Behaviors.Emissions;
 using Displays2d;
+using Il2Cpp;
 
 [assembly: MelonInfo(typeof(HackerTower.HackerTower), ModHelperData.Name, ModHelperData.Version, "Commander__Cat")]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
@@ -125,7 +126,7 @@ namespace HackerTower
     public class Hacker : ModTower
     {
 
-        public override string TowerSet => TowerSetType.Magic;
+        public override TowerSet TowerSet => TowerSet.Military;
         public override string BaseTower => TowerType.DartMonkey;
         public override int Cost => 550;
         public override int TopPathUpgrades => 5;
